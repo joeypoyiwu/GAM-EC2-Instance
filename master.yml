@@ -17,7 +17,7 @@
         path: #/path/to/create
         state: directory
 
-    - name:
+    - name: moves a file to destination
       copy:
         src: #~/path/to/file
         dest: #~/path/to/file
