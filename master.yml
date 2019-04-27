@@ -1,0 +1,32 @@
+- hosts: #enter your hosts to run this playbook against, or use 'all' for all hosts
+  become: true
+
+  tasks:
+    - name: updates the system
+      yum:
+        name: "*"
+        state: latest
+
+     - name: install git
+       yum:
+         name: git
+         state: present
+
+    - name: creates a directory
+      file:
+        path: #/path/to/create
+        state: directory
+
+    - name:
+      copy:
+        src: #~/path/to/file
+        dest: #~/path/to/file
+
+    #
+    # - name: Clone private repo
+    #   git:
+    #     repo: joeypoyiwu@github.com:joeypoyiwu/Moog-IT-GAM-Backup-Server
+    #     version: master
+    #     dest: ~/gam
+    #     accept_hostkey: yes
+    #   become: no
